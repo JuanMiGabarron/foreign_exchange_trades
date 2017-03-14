@@ -6,18 +6,41 @@
         <div class="col-xs-12 col-md-8 col-md-offset-2">
             <h4><strong>New Trade</strong></h4>
             <hr>
-            <select id="sell_currency">
+            <hr>
+            <div class="alert alert-success" role="alert" style="display: none"><strong>Trade created! You can create another trade right now</strong></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 form-inline">
+            <select id="sell_currency" class="form-control">
                 <option disabled selected value> -- select an option -- </option>
                 {% for currency in currencies%}
                     <option value="{{currency}}">{{currency}}</option>
                 {% endfor %}
             </select>
-            <select id="buy_currency" class="pull-right">
+            <div class="form-control col-md-offset-3">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span id="current_rate">w/e</span>
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            </div>
+            <select id="buy_currency" class="form-control pull-right">
                 <option disabled selected value> -- select an option -- </option>
                 {% for currency in currencies%}
                     <option value="{{currency}}">{{currency}}</option>
                 {% endfor %}
             </select>
+            <hr>
+            <div class="form-group">
+                <label for="sell_amount">Sell Amount</label>
+                <input id='sell_amount'class="form-control" type="number" value='0'>
+            </div>
+            <div class="form-group pull-right">
+                <label for="buy_amount">Buy Amount</label>
+                <input id='buy_amount'class="form-control" type="number" disabled>
+            </div>
+            <hr>
+            <button id='create_trade' type="button" class="btn btn-primary" disabled>Create</button>
+            <a href='/' type="button" class="btn btn-danger pull-right">Cancel</a>
         </div>
     </div>
 </div>
