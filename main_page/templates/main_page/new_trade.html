@@ -1,0 +1,25 @@
+{% extends 'main_page/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <h4><strong>New Trade</strong></h4>
+            <hr>
+            <select id="sell_currency">
+                <option disabled selected value> -- select an option -- </option>
+                {% for currency in currencies%}
+                    <option value="{{currency}}">{{currency}}</option>
+                {% endfor %}
+            </select>
+            <select id="buy_currency" class="pull-right">
+                <option disabled selected value> -- select an option -- </option>
+                {% for currency in currencies%}
+                    <option value="{{currency}}">{{currency}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+</div>
+<script src="{% static 'main_page/js/new_trade.js' %}"></script>
+{% endblock %}
