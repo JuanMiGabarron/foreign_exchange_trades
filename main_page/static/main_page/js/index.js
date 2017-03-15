@@ -9,6 +9,8 @@ $(document).ready(function(){
                 if(key=='date_booked'){
                     date = $.format.date(val, "yyyy/MM/dd HH:mm:ss");   //we use jquery-dateFormat plugging to format the date, to avoid overload the api
                     trade += ("<th>" + date + "</th>");
+                }else if(key=="rate"){
+                    trade += ("<th>" + parseFloat(val) + "</th>");      //use parseFloat to remove unnecessaries 0's
                 }else{
                     trade += ("<th>" + val + "</th>");
                 }
