@@ -7,40 +7,52 @@
             <h4><strong>New Trade</strong></h4>
             <hr>
             <hr>
-            <div class="alert alert-success" role="alert" style="display: none"><strong>Trade created! You can create another trade right now</strong></div>
+            <div class="alert alert-success" role="alert" style="display: none"><strong>Trade created!</strong> You can create another trade right now.</strong></div>
+            <div class="alert alert-warning" role="alert" style="display: none"><strong>Invalid currency!</strong> Don't use the same currency, thanks.</strong></div>
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-md-8 col-md-offset-2 form-inline">
-            <select id="sell_currency" class="form-control">
-                <option disabled selected value> -- select an option -- </option>
-                {% for currency in currencies%}
-                    <option value="{{currency}}">{{currency}}</option>
-                {% endfor %}
-            </select>
-            <div class="form-control col-md-offset-3">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span id="current_rate">w/e</span>
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <div class="form-group col-xs-4 col-md-4">
+                <label for="sell_currency">Sell Currency</label>
+                <select id="sell_currency" class="form-control">
+                    <option disabled selected value> -- select an option -- </option>
+                    {% for currency in currencies%}
+                        <option value="{{currency}}">{{currency}}</option>
+                    {% endfor %}
+                </select>
             </div>
-            <select id="buy_currency" class="form-control pull-right">
-                <option disabled selected value> -- select an option -- </option>
-                {% for currency in currencies%}
-                    <option value="{{currency}}">{{currency}}</option>
-                {% endfor %}
-            </select>
+            <div class="form-group col-xs-4 col-md-4">
+                <label for="current_rate">Rate</label>
+                <div class="form-control">
+                    <small id="current_rate"></small>
+                </div>
+            </div>
+            <div class="form-group col-xs-4 col-md-4 pull-right">
+                <label for="buy_currency">Buy Currency</label>
+                <select id="buy_currency" class="form-control">
+                    <option disabled selected value> -- select an option -- </option>
+                    {% for currency in currencies%}
+                        <option value="{{currency}}">{{currency}}</option>
+                    {% endfor %}
+                </select>
+            </div>
             <hr>
-            <div class="form-group">
+            <div class="form-group col-xs-6 col-md-6">
                 <label for="sell_amount">Sell Amount</label>
                 <input id='sell_amount'class="form-control" type="number" value='0'>
             </div>
-            <div class="form-group pull-right">
+            <div class="form-group col-xs-6 col-md-6 pull-right">
                 <label for="buy_amount">Buy Amount</label>
                 <input id='buy_amount'class="form-control" type="number" disabled>
             </div>
             <hr>
-            <button id='create_trade' type="button" class="btn btn-primary" disabled>Create</button>
-            <a href='/' type="button" class="btn btn-danger pull-right">Cancel</a>
+            <div class="form-group col-xs-6 col-md-6">
+                <button id='create_trade' type="button" class="btn btn-primary" disabled>Create</button>
+            </div>
+            <div class="form-group col-xs-6 col-md-6">
+                <a href='/' type="button" class="btn btn-danger pull-right">Cancel</a>
+            </div>
         </div>
     </div>
 </div>
