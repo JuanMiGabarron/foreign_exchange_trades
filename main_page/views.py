@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.utils import timezone
 
 currencies = [
     "AUD", "BGN", "BRL", "CAD", "CHF", "CNY", "CZK", "DKK",
@@ -8,12 +7,16 @@ currencies = [
     "RON", "RUB", "SEK", "SGD", "THB", "TRY", "USD", "ZAR"
 ]
 
-# Create your views here.
+
+# index view
 def index(request):
     return render(request, 'main_page/index.html')
 
+
+# new_trade view
 def new_trade(request):
-    return render(request,
+    return render(
+        request,
         'main_page/new_trade.html',
         {'currencies': currencies}
     )

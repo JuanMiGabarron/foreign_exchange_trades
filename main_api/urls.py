@@ -6,8 +6,6 @@ from main_api.viewsets import TradeViewSet
 router = routers.DefaultRouter()
 router.register('trades', TradeViewSet, 'trade')
 
-# Wire up our API using automatic URL routing.
-# Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     url(r'^api/', include(router.urls)),
 ]
