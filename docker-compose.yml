@@ -1,0 +1,32 @@
+version: '2'
+services:
+  nginx:
+    restart: always
+    image: nginx:latest
+    container_name: nginx_trades
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - ./static:/static
+      - ./config/nginx:/etc/nginx/conf.d
+    depends_on:
+      - web
+  web:
+    restart: always
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: web_trades
+    command: ./start.sh
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - ./static:/static
+    expose:
+      - "8000"
+  db:
+    restart: always
+    image: postgres
+    container_name: postgres_trades
