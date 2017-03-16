@@ -29,7 +29,7 @@ class NewTradeTest(TestCase):
         found = resolve('/newtrade/')
         self.assertEqual(found.func, new_trade)
 
-    def test_index_html(self):
+    def test_new_trade_html(self):
         request = HttpRequest()
         response = new_trade(request)
         html = response.content.decode('utf8')
