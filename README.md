@@ -33,7 +33,7 @@ Now we have all the requirements installed
 
 We have 2 ways to run this app locally or with docker
 
-# Locally
+# Local
 
 For the first one, you need to install postgresql 
 
