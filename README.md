@@ -101,7 +101,9 @@ python manage.py runserver
 ```
 
 # Docker
-For the second, run the webapp into docker just run:
+For the second, we need to have docker installed [here](https://docs.docker.com/engine/installation/#platform-support-matrix) you can download and start docker, I have installed [Docker for mac](https://docs.docker.com/docker-for-mac/install/#install-and-run-docker-for-mac) that's all we need.
+
+When we have docker daemon running, just run:
 
 ```
 docker-compose build
