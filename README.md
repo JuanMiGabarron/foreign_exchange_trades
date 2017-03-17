@@ -1,6 +1,6 @@
 # Foreign Exchange Trades
-This is a application for search **cats** in a graph of stations and tubes, where the owners check all the stations, if is possible, trying to find their cats.
-This is a web app to convert one currency into another.
+
+This is a web app to convert one **currency** into another.
 
 # Run Application
 
