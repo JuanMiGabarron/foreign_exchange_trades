@@ -14,7 +14,7 @@ services:
       - web
   web:
     restart: always
-    build: 
+    build:
       context: .
       dockerfile: ./Dockerfile
     container_name: web_trades
