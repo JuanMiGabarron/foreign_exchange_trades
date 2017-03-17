@@ -13,7 +13,7 @@ brew install python3
 pip install virtualenv
 ```
 
-If you don't have brew installed you can check [a here link](https://brew.sh/)
+If you don't have brew installed you can check [here](https://brew.sh/)
 
 With python3 you already have pip installed
 
